@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-powered enterprise document intelligence and knowledge assistant">
+    <title>KnowledgeAI — Enterprise Knowledge Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar">
+            <div class="brand">
+                <div class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M12 3.5a8.5 8.5 0 0 0-8.5 8.5c0 2.3.91 4.39 2.39 5.93L5 21l3.28-.84A8.47 8.47 0 0 0 12 20.5a8.5 8.5 0 1 0 0-17Z" stroke="currentColor" stroke-width="1.8"/>
+                        <path d="M8 12.2 10.3 14 16 8.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div>
+                    <strong>KnowledgeAI</strong>
+                    <span>Enterprise Intelligence</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav" aria-label="Main navigation">
+                <a class="nav-item active" href="#dashboard">
+                    <span class="nav-icon">⌂</span>
+                    <span>Dashboard</span>
+                </a>
+                <a class="nav-item" href="#documents">
+                    <span class="nav-icon">▤</span>
+                    <span>Documents</span>
+                </a>
+                <a class="nav-item" href="#assistant">
+                    <span class="nav-icon">✦</span>
+                    <span>AI Assistant</span>
+                </a>
+                <a class="nav-item" href="#settings">
+                    <span class="nav-icon">⚙</span>
+                    <span>Settings</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="system-card">
+                    <span class="status-dot"></span>
+                    <div>
+                        <strong>System Online</strong>
+                        <span>Knowledge services active</span>
+                    </div>
+                </div>
+                <div class="sidebar-caption">AI Document Intelligence</div>
+            </div>
+        </aside>
+
+        <div class="main-area">
+            <header class="topbar">
+                <button class="mobile-menu" id="mobileMenuButton" type="button" aria-label="Open navigation">
+                    <span></span><span></span><span></span>
+                </button>
+
+                <div class="topbar-heading">
+                    <span class="eyebrow">ENTERPRISE KNOWLEDGE PLATFORM</span>
+                    <h1>Knowledge workspace</h1>
+                </div>
+
+                <div class="topbar-actions">
+                    <div class="api-status">
+                        <span class="status-dot"></span>
+                        <span>API connected</span>
+                    </div>
+                    <div class="profile-chip" aria-label="Current user">
+                        <span class="avatar">SK</span>
+                        <span class="profile-name">Workspace</span>
+                    </div>
+                </div>
+            </header>
+
+            <main class="content" id="dashboard">
+                <section class="hero">
+                    <div class="hero-copy">
+                        <span class="hero-kicker">AI DOCUMENT INTELLIGENCE</span>
+                        <h2>Turn your documents into <span>searchable knowledge.</span></h2>
+                        <p>Upload enterprise PDFs, ask questions in natural language, and get contextual answers with transparent document sources.</p>
+                        <div class="hero-actions">
+                            <a class="primary-button" href="#documents">
+                                <span>Upload documents</span>
+                                <span aria-hidden="true">→</span>
+                            </a>
+                            <a class="secondary-button" href="#assistant">
+                                Ask the assistant
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="hero-visual" aria-hidden="true">
+                        <div class="orb orb-one"></div>
+                        <div class="orb orb-two"></div>
+                        <div class="hero-panel">
+                            <div class="mini-window-bar">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="mini-line wide"></div>
+                            <div class="mini-line"></div>
+                            <div class="mini-line medium"></div>
+                            <div class="mini-source">
+                                <span class="source-mini-icon">PDF</span>
+                                <div>
+                                    <strong>Context retrieved</strong>
+                                    <span>Source-backed response</span>
+                                </div>
+                                <span class="check">✓</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="stats-grid" aria-label="Workspace statistics">
+                    <article class="stat-card">
+                        <div class="stat-icon blue">▤</div>
+                        <div>
+                            <span class="stat-label">Total Documents</span>
+                            <strong id="totalDocuments">—</strong>
+                            <small>Uploaded to workspace</small>
+                        </div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-icon green">✓</div>
+                        <div>
+                            <span class="stat-label">Processed</span>
+                            <strong id="processedDocuments">—</strong>
+                            <small>Ready for questions</small>
+                        </div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-icon purple">⌁</div>
+                        <div>
+                            <span class="stat-label">Knowledge Sources</span>
+                            <strong id="knowledgeSources">—</strong>
+                            <small>Document sources available</small>
+                        </div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-icon orange">✦</div>
+                        <div>
+                            <span class="stat-label">AI Assistant</span>
+                            <strong>Ready</strong>
+                            <small>RAG knowledge retrieval</small>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="workspace-grid">
+                    <div class="panel upload-panel" id="documents">
+                        <div class="section-heading">
+                            <div>
+                                <span class="section-kicker">KNOWLEDGE LIBRARY</span>
+                                <h2>Add knowledge</h2>
+                                <p>Upload a PDF to index its content for the AI assistant.</p>
+                            </div>
+                            <span class="pill">PDF only</span>
+                        </div>
+
+                        <div class="drop-zone" id="dropZone" tabindex="0" role="button" aria-label="Choose a PDF file">
+                            <input type="file" id="documentFile" accept=".pdf,application/pdf" hidden>
+                            <div class="upload-icon" aria-hidden="true">↑</div>
+                            <h3>Drop your PDF here</h3>
+                            <p>or choose a file from your computer</p>
+                            <button class="outline-button" id="chooseFileButton" type="button">Choose PDF</button>
+                            <span class="selected-file" id="selectedFile">No file selected</span>
+                        </div>
+
+                        <div class="upload-actions">
+                            <div class="upload-message" id="uploadMessage" role="status" aria-live="polite"></div>
+                            <button class="primary-button compact" id="uploadButton" type="button">
+                                <span>Upload & process</span>
+                                <span aria-hidden="true">↑</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="panel quick-panel">
+                        <div class="section-heading">
+                            <div>
+                                <span class="section-kicker">HOW IT WORKS</span>
+                                <h2>From document to answer</h2>
+                            </div>
+                        </div>
+                        <div class="workflow">
+                            <div class="workflow-step">
+                                <span>01</span>
+                                <div>
+                                    <strong>Upload</strong>
+                                    <p>Add an enterprise PDF to your knowledge library.</p>
+                                </div>
+                            </div>
+                            <div class="workflow-line"></div>
+                            <div class="workflow-step">
+                                <span>02</span>
+                                <div>
+                                    <strong>Retrieve</strong>
+                                    <p>Relevant document context is found using semantic search.</p>
+                                </div>
+                            </div>
+                            <div class="workflow-line"></div>
+                            <div class="workflow-step">
+                                <span>03</span>
+                                <div>
+                                    <strong>Ask</strong>
+                                    <p>Get a concise answer with supporting source pages.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="panel documents-panel">
+                    <div class="section-heading documents-heading">
+                        <div>
+                            <span class="section-kicker">YOUR KNOWLEDGE</span>
+                            <h2>Documents</h2>
+                            <p>Manage the files currently available to the assistant.</p>
+                        </div>
+                        <div class="document-tools">
+                            <label class="search-box">
+                                <span aria-hidden="true">⌕</span>
+                                <input id="documentSearch" type="search" placeholder="Search documents..." aria-label="Search documents">
+                            </label>
+                            <span class="document-count" id="documentCount">0 documents</span>
+                        </div>
+                    </div>
+
+                    <div id="documentsList" class="documents-list">
+                        <div class="loading-state">
+                            <span class="spinner"></span>
+                            <span>Loading your documents...</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="panel assistant-panel" id="assistant">
+                    <div class="assistant-header">
+                        <div class="assistant-title">
+                            <div class="assistant-avatar">✦</div>
+                            <div>
+                                <span class="section-kicker">RAG KNOWLEDGE ASSISTANT</span>
+                                <h2>Ask your knowledge base</h2>
+                                <p>Answers are generated from the content of your uploaded documents.</p>
+                            </div>
+                        </div>
+                        <div class="assistant-status">
+                            <span class="status-dot"></span>
+                            Ready
+                        </div>
+                    </div>
+
+                    <div class="chat-container">
+                        <div id="chatMessages" class="chat-messages" aria-live="polite">
+                            <div class="welcome-message">
+                                <div class="welcome-icon">✦</div>
+                                <h3>What would you like to know?</h3>
+                                <p>Ask a question about any information contained in your uploaded documents.</p>
+                                <div class="suggestion-list">
+                                    <button type="button" class="suggestion">Explain the main topic of the document</button>
+                                    <button type="button" class="suggestion">Summarize the important points</button>
+                                    <button type="button" class="suggestion">What does the document say about this topic?</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chat-composer">
+                            <div class="composer-input">
+                                <textarea id="questionInput" rows="1" placeholder="Ask a question about your documents..." aria-label="Ask a question"></textarea>
+                            </div>
+                            <button class="send-button" id="askButton" type="button" aria-label="Send question">
+                                <span>Ask</span>
+                                <span aria-hidden="true">↑</span>
+                            </button>
+                            <span class="composer-hint">Press Enter to ask · Shift + Enter for a new line</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="settings-anchor" id="settings">
+                    <div>
+                        <span class="section-kicker">WORKSPACE</span>
+                        <h2>Settings</h2>
+                        <p>Frontend settings are currently managed by the application configuration.</p>
+                    </div>
+                    <div class="settings-status">
+                        <span class="status-dot"></span>
+                        Backend connected at <code>127.0.0.1:8000</code>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="footer">
+                <span>KnowledgeAI · AI Document Intelligence</span>
+                <span>Enterprise Knowledge Assistant</span>
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
